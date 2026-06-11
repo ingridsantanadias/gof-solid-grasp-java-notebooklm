@@ -1,5 +1,5 @@
 Os 23 padrões GoF são divididos em três categorias principais, baseadas no seu propósito:
-
+---
 ### Padrões de Criação (5)
 Focam em como os objetos são instanciados, aumentando a flexibilidade e o reuso de código:
 *   **Factory Method:** Delega a criação para subclasses.
@@ -7,6 +7,8 @@ Focam em como os objetos são instanciados, aumentando a flexibilidade e o reuso
 *   **Singleton:** Garante uma única instância global.
 *   **Builder:** Constrói objetos complexos passo a passo.
 *   **Prototype:** Cria novos objetos clonando um protótipo.
+
+---
 
 ### Padrões Estruturais (7)
 Lidam com a composição de classes e objetos para formar estruturas maiores:
@@ -17,6 +19,8 @@ Lidam com a composição de classes e objetos para formar estruturas maiores:
 *   **Facade:** Oferece uma interface simplificada para um subsistema.
 *   **Flyweight:** Compartilha dados para economizar memória.
 *   **Proxy:** Controla o acesso a um objeto.
+
+---
 
 ### Padrões Comportamentais (11)
 Tratam das interações e responsabilidades entre os objetos:
