@@ -1,0 +1,33 @@
+Chain of Responsibility (Corrente de Responsabilidade)O que faz: Passa uma solicitação por uma corrente de objetos até que um deles a resolva.Exemplo real: Um sistema de atendimento ao cliente (Suporte Nível 1 -> Nível 2 -> Gerente).
+Intenção: Evitar o acoplamento entre o remetente de uma solicitação e seu receptor, dando a mais de um objeto a chance de tratar a solicitação.
+
+Command (Comando)O que faz: Transforma uma solicitação ou ação em um objeto próprio. Isso permite parametrizar, agendar ou salvar o histórico de ações (como o famoso "Desfazer").Exemplo real: O botão de "Salvar" ou o atalho Ctrl + Z.
+Intenção: Encapsular uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações, enfileirar ou registrar solicitações e suportar operações que podem ser desfeitas.
+
+Interpreter (Intérprete)O que faz: Avalia ou traduz uma linguagem, gramática ou expressão específica dentro do programa.Exemplo real: Um leitor de expressões matemáticas ou um validador de formatos de texto (como Regex).
+Intenção: Dada uma linguagem, definir uma representação para sua gramática juntamente com um intérprete que usa a representação para interpretar sentenças na linguagem.
+
+Iterator (Iterador)O que faz: Permite navegar pelos elementos de uma coleção (lista, árvore, etc.) sequencialmente, sem expor como essa coleção é estruturada por dentro. Exemplo real: O famoso foreach ou map que usamos para varrer listas.
+Intenção: Fornecer uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor sua representação subjacente.
+
+Mediator (Mediador)O que faz: Centraliza a comunicação entre vários objetos para que eles não conversem diretamente entre si, reduzindo a bagunça e o acoplamento. Exemplo real: Uma torre de controle de tráfego aéreo (os aviões falam com a torre, não uns com os outros).
+Intenção: Definir um objeto que encapsula como um conjunto de objetos interage, promovendo o acoplamento fraco ao evitar que os objetos se refiram uns aos outros explicitamente.
+
+Memento (Lembrança)O que faz: Salva e restaura o estado interno de um objeto (um "checkpoint") sem violar o encapsulamento. Exemplo real: O sistema de save game em jogos ou o histórico de edições de um documento.
+Intenção: Sem violar o encapsulamento, capturar e externalizar o estado interno de um objeto para que o objeto possa ser restaurado para este estado mais tarde.
+
+Observer (Observador)O que faz: Cria uma relação de "assinatura". Quando um objeto muda de estado, todos os seus assinantes são notificados automaticamente.Exemplo real: Inscrições no YouTube (você recebe uma notificação quando o canal posta um vídeo novo).
+Intenção: Definir uma dependência um-para-muitos entre objetos para que, quando um objeto mudar de estado, todos os seus dependentes sejam notificados e atualizados automaticamente.
+
+State (Estado)O que faz: Permite que um objeto mude de comportamento quando o seu estado interno muda. O objeto parece mudar de classe.Exemplo real: Uma máquina de vendas de refrigerante (ela se comporta diferente se tiver crédito ou se estiver vazia).
+Intenção: Permitir que um objeto altere seu comportamento quando seu estado interno mudar. O objeto parecerá ter mudado de classe.
+
+Strategy (Estratégia)O que faz: Define uma família de algoritmos, coloca cada um deles em uma classe separada e os torna intercambiáveis em tempo de execução.Exemplo real: Opções de frete no carrinho de compras (Sedex, PAC, Jadlog). O app muda o cálculo dependendo da sua escolha.
+Intenção: Definir uma família de algoritmos, encapsular cada um deles e torná-los intercambiáveis, permitindo que o algoritmo varie independentemente dos clientes que o utilizam.
+Intenção: Definir o esqueleto de um algoritmo em uma operação, adiando a definição de alguns passos para as subclasses, sem alterar a estrutura do algoritmo.
+
+Template Method (Método Modelo)O que faz: Define o esqueleto de um algoritmo em uma superclasse, mas deixa que as subclasses reescrevam etapas específicas sem mudar a estrutura geral. Exemplo real: Uma receita padrão de bolo (o esqueleto é o mesmo, mas a subclasse decide se o sabor será chocolate ou cenoura).
+
+
+Visitor (Visitante)O que faz: Permite que você adicione novos comportamentos e operações a um grupo de objetos sem modificar as classes desses objetos. Exemplo real: Um fiscal de exportação que passa inspecionando diferentes tipos de mercadorias no porto sem alterar as mercadorias em si.
+Intenção: Representar uma operação a ser executada sobre os elementos da estrutura de um objeto, permitindo definir uma nova operação sem mudar as classes dos elementos sobre os quais opera.

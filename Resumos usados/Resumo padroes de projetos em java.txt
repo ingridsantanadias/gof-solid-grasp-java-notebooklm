@@ -1,0 +1,97 @@
+Padrões de Projetos em Java
+
+- Os padrões GOF de criação auxiliam na construção de sistemas independentes da forma com que os objetos são criados e representados.
+
+
+Padrão de projeto Factory Method
+- Define uma interface para a criação de objetos, mas permite que as subclasses definam o tipo de objeto específico que será gerado, ou seja, delega para os descendentes a lógica de criação, diminuindo o acoplamento do código e viabilizando o reuso dos processos em contextos diferenciados.
+- É um padrão frequentemente utilizado na implementação de frameworks. Ele define uma interface para a criação de objetos, deixando para as subclasses a decisão sobre a classe específica a ser instanciada.
+- Alta complexidade também é um dos principais inimigos da evolução sustentável de um sistema.
+- Intenção do padrão de projeto Factory Method: Permitir que um módulo possa criar objetos de uma hierarquia de classes, chamando uma operação genérica definida em uma superclasse e deixando a instanciação do objeto específico da hierarquia para cada implementação dessa operação nas subclasses.
+- hasNext: Verifica se existe um próximo elemento no ArrayList ou se o cursor já está posicionado no último elemento.
+- next: Retorna o próximo elemento do ArrayList. Na primeira chamada, ele retorna o primeiro elemento da coleção.
+- remove : remove um elemento de uma coleção.
+
+Solução do padrão Factory Method:
+- Esse padrão define um método responsável por padronizar a criação de objetos para uma família de classes ou para aquelas que implementam uma interface específica.
+- O framework de estrutura de dados da linguagem Java implementa uma solução para esse problema por meio da aplicação do padrão Factory Method.
+- ArrayList: representa estruturas como arrays.
+- LinkedList:  representa estrutueras como listas encadeadas.
+- HashSet: representa estruturas como conjuntos chaves-valor.
+- TreeSet: representa estruturas como conjuntos organizados em árvores de busca.
+- A interface Collection define uma operação abstrata chamada iterator, implementada em cada estrutura de dados específica. Essa operação cria e retorna um objeto que implementa a interface Iterator.
+- A interface Iterator define um cursor que possibilita a navegação em uma coleção de dados e a exclusão de elementos com as mesmas operações apresentadas nos exemplos anteriores, isto é, hasNext, next e remove.
+- Dessa forma, a operação iterator de ArrayList instancia um ArrayIterator, a de LinkedList instancia um ListIterator, e assim por diante, para cada coleção específica. Esse esquema é uma simplificação, para fins didáticos, das classes realmente implementadas na linguagem Java.
+- O comando itens.iterator() é uma chamada polimórfica a partir da interface Collection, que resulta na criação de uma das implementações específicas da interface Iterator. O comando itens.iterator() é uma chamada polimórfica a partir da interface Collection, que resulta na criação de uma das implementações específicas da interface Iterator.
+- Nessa solução, a única responsabilidade da operação iterator é criar (fabricar) a instância da interface Iterator apropriada para a estrutura de dados. Esta é a ideia central do padrão Factory Method: definir uma operação “fábrica” na classe abstrata (Collection), deixando para cada subclasse (ArrayList, LinkedList, HashSet, TreeSet) a decisão da implementação específica da interface (Iterator) retornada pela fábrica.
+- É composta por uma hierarquia de classes que especializam um participante abstrato Creator e por outra hierarquia de classes que especializam um participante abstrato Product.
+- Creator é uma classe abstrata ou uma interface. O Factory Method não é implementado em Product, mas, sim, em cada ConcreteCreator. Os produtos formam uma hierarquia com uma superclasse ou interface genérica comum. O Factory Method é uma operação declarada em Creator, mas implementada apenas nos participantes do tipo ConcreteCreator.
+- A intenção do padrão de projeto Factory Method : Permitir que um módulo possa criar objetos de uma hierarquia de classes, chamando uma operação genérica definida em uma superclasse e deixando a instanciação , chamando uma operação genérica definida em uma superclasse e deixando a instanciação do objeto específico da hierarquia para cada implementação dessa operação nas subclasses.
+- O padrão Factory Method define uma interface para a criação de objetos e deixa para as subclasses específicas a decisão sobre sua instanciação.
+- A principal consequência do uso de Factory Method é o aumento da extensibilidade, já que novas classes podem ser utilizadas para o mesmo domínio com facilidade.
+- O padrão Factory Method pode ser aplicado em conjunto com o padrão Strategy, que tem como objetivo a separação de diferentes algoritmos dos objetos de domínio sobre os quais eles atuam.
+-Template Method é outro padrão frequentemente utilizado em conjunto com o Factory Method.
+ 
+
+Abstract Factory
+- É um padrão que fornece uma interface para a criação de famílias de objetos relacionados ou dependentes, sem criar dependências entre o cliente e as classes concretas instanciadas.
+- Alto acoplamento.
+- Intenção do padrão de projeto Abstract Factory : Permitir a criação de famílias de produtos ou dependentes, de modo que não sejam criadas dependências entre os módulos clientes e as classes concretas das famílias especificas de produtos.
+- O padrão Abstract Factory define uma fábrica abstrata para gerar produtos abstratos, frequentemente usados com o Template Method.
+- Estrutura de solução proposta pelo padrão: Deve definir uma classe fábrica concreta para cada família de produtos.
+- A principal consequência do padrão Abstract Factory é a definição de modelos formais para geração de objetos em contextos específicos de utilização, sem que ocorra perda de flexibilidade.
+- O padrão Abstract Factory promove o encapsulamento do processo de criação de objetos, isolando os clientes das implementações concretas, permitindo que os clientes sejam implementados pelo uso apenas de abstrações. Além disso, esse padrão promove a consistência entre produtos relacionados, isto é, produtos da mesma família que devem ser utilizados em conjunto. Entretanto, a introdução de novos produtos não é simples, pois exige mudança em todas as fábricas. Cada novo produto inserido exige a adição de uma nova operação de criação em cada fábrica da estrutura.
+- Indicado no contexto de : Um framework que define uma interface de acesso a pools de objetos e uma segunda para geração delas,permitindo personalização pelo programador,com a definição de seus próprios objetos e a geração de interfaces customizadas para esses objetos.
+- Através da injeção de dependência é possível inverter o controle dos processos, delegando para o framework a responsabilidade sobre a execução de determinados passos. Em muitos casos ela pode substituir o padrão Abstract Factory, e uma vantagem obtida com o uso da injeção de dependências é a diminuição de acoplamento.
+
+Builder
+- O padrão Builder permite desacoplar os objetos gerados dos passos para a construção, para que estes passos possam ser combinados de diferentes formas, simplificando a configuração de objetos complexos.
+- Permite que um unico processo de construção seja capaz de construir diferentes representações de objetos complexos, separando,em classes distintas, o processo de construção de suas diferentes representações.
+- O padrão Builder utiliza uma interface de construção capaz de gerar as diferentes partes de um objeto complexo, permitindo várias implementações de construtores, para satisfazer diferentes cenários. Os métodos para a construção das partes podem ser combinados e um método para obtenção do resultado é invocado ao final. 
+- A solução proposta pelo padrão Builder consiste em separar a criação de objetos complexos de quem demanda esses objetos.
+- Somente o participante Concrete Builder conhece a representação interna do produto que eçe é responsável por construir.
+- O padrão Builder gerencia construtores individuais para partes de um objeto complexo, proporcionando flexibilidade na configuração.  O Builder permite combinar construtores em qualquer ordem e reutilizá-los.
+- Uma aplicação típica do padrão Builder é a substituição de múltiplos construtores, permitindo a configuração apenas das características de interesse antes da geração do objeto complexo.
+-  O padrão de projeto Builder oferece uma solução interessante para a construção de objetos complexos, sendo adotado na biblioteca Retrofit e construção de diálogos do Android, além de muitos outros cenários. Geração de objetos de controle para diferentes tipos de drone, com diversas configurações alternativas, disponibilizadas por cada fabricante.
+
+Prototype
+- Define um protótipo que armazena configurações comuns, permitindo que novos objetos herdem essas definições sem repetir o processo de inicialização. Apenas as modificações específicas são aplicadas conforme o contexto.
+- O padrão Prototype permite a instanciação de objetos a partir da geração de uma cópia de um objeto protótipo, fazendo com que o módulo cliente não precise conhecer a classe específica que está sendo instanciada.
+- Qualquer alteração no objeto clonado também modificará o original.
+- No ambiente Java, o padrão Prototype é implementado de forma simples, com o uso de polimorfismo no método clone. Acerca da implementação do método sobrescrito, os atributos clonados que forem do tipo objeto exigirão o uso de new ou de outras clonagens.
+- Simplificação da criação de famílias de produtos.
+- Otimização da criação de instâncias.
+- Criação de instâncias com estado complexo.
+
+Singleton
+- O propósito do padrão Singleton é garantir que exista uma (e apenas uma) instância de uma classe, provendo um ponto de acesso global a essa instância.
+- Um construtor privado, uma instância privada estática e um método público estático para retornar essa instância.
+- O nome Singleton representa o nome da classe que você deseja que tenha apenas uma instância. O atributo unicaInstancia é uma referência a essa única instância a ser compartilhada pelos demais módulos.
+- Garantir que uma classe tenha apenas uma instância em um processo de execução, impedindo qie outros módulos possam instanciar diretamente essa classe.
+- Dificuldade em testes unitários, pois o padrão não prevê instâncias simuladas. Embora não seja estruturado com base em outros padrões, pode encapsular funcionalidades de Builder e Factory Method na construção de objetos. 
+- Os estados gerenciados são globais para o aplicativo.
+
+Q1- "Definir um construtor private e implementar uma operação estática que retorna uma instância criada em uma operação com escopo static e armazena como um atributo static dentro da própria classe".
+R. Singleton
+
+Q2- Abstract Factory : Sua implementação pode envolver a aplicação do padrão Factory Method.
+
+Q3- Reduzir a necessidade de criar hierarquias paralelas de classes ou de criar subclasses apenas para instanciar objetos específicos é um dos efeitos obtidos com a aplicação de qual padrão?
+R. Prototype
+
+Q4-"Definir uma hierarquia de classes responsáveis pela instanciação de uma hierarquia paralela de classes produtos, em  que cada classe concreta é capaz de instanciar um produto específico de cada tipo definido em família de produtos".
+R. Abstract Factory.
+
+Q5- OS iteradores de coleção em Java obtidos a partir da interface Collection são implementados com a aplicação de qual padrão de projeto?
+R.Factory Method.
+
+Q6- Em um projeto de software para gestão de bibliotecas, o padrão Singleton é utilizado para garantir uma única instância do sistema de gerenciamento de usuários. Este padrão assegura que todas as operações empréstimo e devolução de livros sejam gerenciados de forma centralizada.
+Qual é a principal característica do padrão Singleton utilizada nesse contexto?
+R. Garante uma única instância de uma classe em toda a aplicação.
+
+Q7- Você desejaria criar um objeto complexo formado por diferentes partes. Para isso, você define uma interface abstrata responsável com operações representando a criação dessas partes, permitindo que as implementações concretas dessa interface criem diferentes dessas partes. Qual padrão de projeto você utilizaria nessa situação?
+R.Builder.
+
+Q8- Em um sistema de vendas online, o padrão Abstract Factory é utilizado para criar objetos relacionados a diferentes categorias de produtos sem especificar suas classes concretas. Isso permite flexibilidade na adição de novas categorias de produtos.
+Qual é o proposito do padrão Abstract Factory nesse contexto?
+R. Criar uma família de objetos relacionados sem especificar suas classes concretas.

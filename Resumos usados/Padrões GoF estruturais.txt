@@ -1,0 +1,52 @@
+Padrões GoF estruturais
+- Organizam classes e objetos, possibilitando a formação de estruturas complexas, podem ser formadas com soluções baseadas em herança ou em composição de objetos.
+- Adapter (compatibiliza interfaces)
+- Bridge (separa abstração e implementação)
+- Composite (uniformiza tratamento de objetos e composições)
+- Decorator (Adiciona funcionalidades dinamicamente)
+- Facade (simplifica interações)
+- Flyweight (otimiza memória compartilhando dados)
+- Proxy (controla acesso a objetos)
+
+O Adapter funciona como um "tradutor" ou "adaptador de tomada" para o  código.
+O que ele faz: Converte a interface de uma classe na interface que o cliente espera, permitindo que classes incompatíveis trabalhem juntas.
+Como ele faz: Ele encapsula a classe existente, adaptando-a para o novo formato sem alterar o código interno original.
+Principal objetivo: Facilitar a integração e a reutilização de sistemas (especialmente sistemas legados), trazendo flexibilidade e compatibilidade de forma limpa.
+- intenção do padrão de projeto Adapter : Permitir a utilização de diferentes implementações de um mesmo serviço a partir de uma interface comum, sendo que essas implementações correspondem normalmente a componentes fornecidos por terceiros.
+- solução proposta pelo padrão adpter : O participante Adpter possui a responsabilidade de converter as operações definidas pelo participante Target nas operações definidas no participante Adaptee.
+ 
+O Bridge visa desacoplar uma abstração de sua implementação para que ambas possam variar independentemente. Ele resolve o problema da proliferação  de subclasses que ocorre quando é necessário combinar múltiplas abstrações com múltiplas implementações.
+- Separa as hierarquias de abstração e implementação, conectando-as por uma "ponte". Isso reduz a complexidade, facilita a manutenção e evolução do sistema, permitindo mudanças nas abstrações e implementações sem que uma afete a outra e resulta em um design mais flexivel.
+- intenção: desacoplar uma abstração da sua implementação, permitindo que ambas possam variar de forma independente. Permitir que uma abstração e sua representação interna ou tecnológica  possam variar de forma independente, fornecendo uma ponte entre a abstração e a sua representação.
+- usado para evitar problema de explosão combinatória de classes
+- possibilita o desacoplamento de uma hierarquia de abstrações em relação a uma hierarquia de implementações associadas, o que promove a extensibilidade da solução, pois podemos acrescentar, de forma independente, tanto novos itens à abstração quanto novas implementações associadas.
+- evita a necessidade de criar múltiplas subclasses para cada combinação de abstração e implementação.
+- intenção: adicionar funcionalidades a uma classe sem utilizar subclasses, mas por meio de uma estrutura de composição dinâmica e flexível.
+- O padrão Decorator resolve o problema de estender objetos dinamicamente adicionando responsabilidades sem modificar sua estrutura original.
+- O padrão Decorator tem como intenção adicionar responsabilidades a objetos de modo dinâmico e transparente, sem alterar sua estrutura básica
+- permite combinações flexíveis de comportamentos através da composição, mantendo o código limpo e modular, enquanto permite a adição e remoção de funcionalidades de maneira dinâmica durante a execução do programa.
+- intenção do padrão de projeto decorator : permitir a adição de funcionalidades a objetos existentes sem utilizar herança.
+
+O padrão Composite tem como intenção compor objetos em estruturas de árvore para representar hierarquias parte-todo
+- O Composite é ideal para representar estruturas hierárquicas em que partes podem ser tratadas de modo uniforme, promovendo a reutilização de código e a clareza na manipulação de estruturas complexas dentro de um sistema.
+- intenção :  representar hierarquias de composição de objetos em uma estrutura de árvore
+- compor hierarquias de objetos de forma que objetos individuais e agregados possam ser manipulados de forma genérica pelo mesmo conjunto de operações.
+
+O padrão Facade tem como intenção fornecer uma interface simplificada e unificada para um conjunto de interfaces em um subsistema, tornando esse subsistema mais fácil de usar. 
+-intenção do padrão de projeto facade: oferecer uma interface de alto nível para acesso a um subsistema.
+- reduzir o acoplamento de um módulo cliente com os elementos que compõem um subsistema, fornecendo para o módulo cliente de alto nível aos serviços desse subsistema.
+- O padrão Facade fornece uma solução ao criar uma interface simplificada e unificada para um conjunto de interfaces complexas em um subsistema, facilitando seu uso.
+
+O padrão Flyweight tem a intenção de minimizar o uso de memória compartilhando o máximo possível de dados entre múltiplos objetos semelhantes.
+- O Flyweight separa os dados intrínsecos (compartilháveis) dos dados extrínsecos (específicos de cada objeto) e armazena apenas uma instância dos dados intrínsecos. reduzindo significativamente a quantidade de memória necessária para representar um grande número de objetos.
+- permitir a utilização de diversos pequenos objetos de forma eficiente, por meio de uma solução baseada em compartilhamento de objetos.
+-intenção do padrão de projeto flyweight: permitir a utilização racional de memória evitando a criação de um número muito grande de objetos simples.
+- permite a utilização mais eficiente de memória, evitando a criação de um número muito grande de objetos imutáveis simples, por meio de uma solução baseada em compartilhamento.
+- O padrão Flyweight soluciona o problema do alto consumo de memória ao compartilhar dados intrínsecos entre muitos objetos semelhantes. 
+
+O padrão Proxy tem como objetivo fornecer um substituto ou marcador para controlar o acesso a um objeto. Ele resolve problemas relacionados ao controle de acesso, à otimização de recursos e ao encapsulamento de complexidade, ao interpor um objeto substituto que gerencia a interação com o objeto real.
+- fornecer aos clientes um objeto proxy, com a mesma interface do objeto destino real, que delega as requisições dos clientes para o objeto real.
+- permite a utilização de objetos remotos, de forma transparente, paara o módulo chamador, isto é, o módulo chamador pode chamar as operações do objeto remoto como se ambos estivessem rodando no mesmo processo.
+- O padrão Proxy soluciona o problema de controle de acesso e otimização de recursos ao interpor um objeto substituto entre o cliente e o objeto real.
+- intenção do padrão de projeto proxy: permitir a utilização de objetos remotos como se, tanto o objeto remoto chamando como o objeto chamador, estivessem rodando no mesmo processo.
+- controlar o acesso a um objeto, permitindo operações como carregamento sob demanda e controle de acesso.
