@@ -1,5 +1,5 @@
 Vamos explorar os cinco princípios **SOLID**, que visam tornar o código mais compreensível, flexível e fácil de manter.
-
+---
 Aqui está o que cada um significa:
 
 *   **S - Single Responsibility (Responsabilidade Única):** Uma classe deve ter apenas um motivo para mudar, ou seja, uma única responsabilidade.
@@ -9,7 +9,7 @@ Aqui está o que cada um significa:
 *   **D - Dependency Inversion (Inversão de Dependência):** Deve-se depender de abstrações (interfaces) e não de implementações concretas, o que ajuda a desacoplar o código.
 
 O SOLID ajuda na manutenção ao tornar o código mais compreensível, flexível e fácil de expandir. Ele reduz a incidência de erros ao garantir que mudanças em uma parte do sistema não quebrem outras funcionalidades já testadas.
-
+---
 Principais benefícios para a manutenção:
 *   **Isolamento de mudanças:** Com a **Responsabilidade Única**, você altera uma classe por um único motivo, facilitando correções sem efeitos colaterais.
 *   **Extensibilidade sem riscos:** O princípio **Aberto-Fechado** permite adicionar novos recursos estendendo o código, em vez de modificar o que já funciona.
