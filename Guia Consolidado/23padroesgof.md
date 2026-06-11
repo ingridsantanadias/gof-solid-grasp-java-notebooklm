@@ -32,4 +32,4 @@ Tratam das interações e responsabilidades entre os objetos:
 *   **Template Method:** Define o esqueleto de um algoritmo, adiando passos para subclasses.
 *   **Visitor:** Adiciona novas operações a uma estrutura de objetos sem alterá-la.
 
-Gostaria de ver um exemplo prático em Java de algum desses padrões ou prefere passar para os **Princípios SOLID**?
+
